@@ -14,9 +14,15 @@
 
 @implementation AppDelegate
 
+@synthesize navController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    navController = [[UIStoryboard storyboardWithName:@"Main" bundle: nil] instantiateViewControllerWithIdentifier:@"navigationController"];
+    self.window.rootViewController = navController;
+    
     return YES;
 }
 

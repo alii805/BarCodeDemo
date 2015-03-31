@@ -14,6 +14,7 @@
 		3080687C1A6548D100604619 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3080687B1A6548D100604619 /* Images.xcassets */; };
 		3080687F1A6548D100604619 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3080687D1A6548D100604619 /* LaunchScreen.xib */; };
 		3080688B1A6548D100604619 /* BarCodeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080688A1A6548D100604619 /* BarCodeDemoTests.m */; };
+		308068961A65491A00604619 /* FPScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308068951A65491A00604619 /* FPScanBarCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		308068841A6548D100604619 /* BarCodeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarCodeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		308068891A6548D100604619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3080688A1A6548D100604619 /* BarCodeDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeDemoTests.m; sourceTree = "<group>"; };
+		308068941A65491A00604619 /* FPScanBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPScanBarCodeViewController.h; sourceTree = "<group>"; };
+		308068951A65491A00604619 /* FPScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPScanBarCodeViewController.m; sourceTree = "<group>"; };
+		308068971A654A5D00604619 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,9 @@
 				308068731A6548D100604619 /* AppDelegate.m */,
 				308068751A6548D100604619 /* ViewController.h */,
 				308068761A6548D100604619 /* ViewController.m */,
+				308068941A65491A00604619 /* FPScanBarCodeViewController.h */,
+				308068951A65491A00604619 /* FPScanBarCodeViewController.m */,
+				308068971A654A5D00604619 /* Constants.h */,
 				308068781A6548D100604619 /* Main.storyboard */,
 				3080687B1A6548D100604619 /* Images.xcassets */,
 				3080687D1A6548D100604619 /* LaunchScreen.xib */,
@@ -221,6 +228,7 @@
 			files = (
 				308068771A6548D100604619 /* ViewController.m in Sources */,
 				308068741A6548D100604619 /* AppDelegate.m in Sources */,
+				308068961A65491A00604619 /* FPScanBarCodeViewController.m in Sources */,
 				308068711A6548D100604619 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BarCodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BarCodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

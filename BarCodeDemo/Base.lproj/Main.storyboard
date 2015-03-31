@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CR2-Pb-4JO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="euq-HH-z5K">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" id="CR2-Pb-4JO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="chJ-Ev-i9P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ozb-86-zyd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEE-fV-zCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="305"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +33,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfu-C6-ViY">
+                                <rect key="frame" x="32" y="225" width="536" height="30"/>
+                                <state key="normal" title="Show List">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdG-B2-fdS">
+                                <rect key="frame" x="32" y="345" width="536" height="30"/>
+                                <state key="normal" title="Scan BarCode">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdZ-yD-n8z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RdG-B2-fdS" secondAttribute="bottom" constant="225" id="0qx-II-O64"/>
+                            <constraint firstAttribute="centerX" secondItem="Hfu-C6-ViY" secondAttribute="centerX" id="44E-kl-5GO"/>
+                            <constraint firstItem="RdG-B2-fdS" firstAttribute="top" secondItem="Hfu-C6-ViY" secondAttribute="bottom" constant="90" id="BS0-vN-ETT"/>
+                            <constraint firstItem="RdG-B2-fdS" firstAttribute="trailing" secondItem="Hfu-C6-ViY" secondAttribute="trailing" id="GUp-Od-jPx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hfu-C6-ViY" secondAttribute="trailing" constant="16" id="acq-UH-nva"/>
+                            <constraint firstItem="Hfu-C6-ViY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="lZI-bD-Lt9"/>
+                            <constraint firstItem="RdG-B2-fdS" firstAttribute="leading" secondItem="Hfu-C6-ViY" secondAttribute="leading" id="uIS-uj-pok"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pNO-7L-Jk8"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="FjQ-DD-5vi" kind="show" id="J17-s2-Lcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Scan Bar Code View Controller-->
+        <scene sceneID="dM4-Sp-INy">
+            <objects>
+                <viewController storyboardIdentifier="scanBarViewController" id="FjQ-DD-5vi" customClass="FPScanBarCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jy6-Lr-8Aj"/>
+                        <viewControllerLayoutGuide type="bottom" id="YaQ-U3-Oc3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lvY-ew-FgB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mqy-Jh-C9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="305"/>
         </scene>
     </scenes>
 </document>

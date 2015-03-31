@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 LC. All rights reserved.
 //
 
+#import "Constants.h"
 #import "ViewController.h"
+#import "FPScanBarCodeViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    NSString * barCode;
+}
 
 @end
 
@@ -22,6 +26,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnAction:(id)sender {
+    if ([sender tag] == 1) {
+        FPScanBarCodeViewController *sBVC = [[UIStoryboard storyboardWithName:@"Main" bundle: nil] instantiateViewControllerWithIdentifier:@"scanBarViewController"];
+        [[APP_DELEGATE navController] pushViewController:sBVC animated:YES];
+        sBVC.delegate = self;
+    }
+    
+}
+
+- (void)setBarCodeString:(NSString*) code
+{
+    barCode = code;
 }
 
 @end
